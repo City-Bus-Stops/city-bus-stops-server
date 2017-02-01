@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 8000,
+  "db": "mongodb://localhost:27018/getRoute",
+  "local-strategy": {
+    "usernameField": "email",
+    "passwordField": "password",
+    "session": false,
+    "passReqToCallback": true
+  },
+  "jwt-secret": "qwerty"
+}

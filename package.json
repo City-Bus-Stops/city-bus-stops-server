@@ -1,0 +1,51 @@
+{
+  "name": "Get_route_server",
+  "version": "0.0.0",
+  "description": "Bus router server",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "fix": "./node_modules/.bin/eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/KrivichaninDS/reactreduxgetroute.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reactjs/redux/issues"
+  },
+  "homepage": "http://redux.js.org",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "faker": "^3.1.0",
+    "http-status": "^0.2.3",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.17.2",
+    "mongoose": "^4.6.5",
+    "nconf": "0.8.4",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.78.0",
+    "validator": "^6.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "http-status": "^0.2.3",
+    "i": "^0.3.5",
+    "mocha": "^3.1.2",
+    "npm": "^3.10.9",
+    "supertest": "^2.0.1",
+    "supertest-as-promised": "^4.0.2"
+  }
+}

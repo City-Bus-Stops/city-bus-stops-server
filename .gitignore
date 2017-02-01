@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules
+
+# Idea directories
+.idea
+
+#Ignore log files
+*.log
+
+# Yarn .lock files
+*.lock
