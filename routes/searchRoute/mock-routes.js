@@ -6,18 +6,22 @@ module.exports = {
       id: faker.random.uuid(),
       arrivalTime: '12 min',
       bustStopName: 'name1',
+      busNumber: 15,
       points: [
         {
           id: faker.random.uuid(),
           name: 'name1',
+          time: '2 min'
         },
         {
           id: faker.random.uuid(),
           name: 'name2',
+          time: '13 min'
         },
         {
           id: faker.random.uuid(),
           name: 'name3',
+          time: '40 min'
         },
       ],
       geoJson: [
@@ -101,14 +105,17 @@ module.exports = {
       id: faker.random.uuid(),
       arrivalTime: '5 min',
       bustStopName: 'name11',
+      busNumber: 3,
       points: [
         {
           id: faker.random.uuid(),
           name: 'name11',
+          time: '7 min'
         },
         {
           id: faker.random.uuid(),
           name: 'name22',
+          time: '12 min'
         },
         {
           id: faker.random.uuid(),
