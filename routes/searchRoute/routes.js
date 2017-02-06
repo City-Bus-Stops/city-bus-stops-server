@@ -1,11 +1,10 @@
 const fakeData = require('./mock-routes');
 
-function post(req, res, next) {
-  console.log(`Request body: ${JSON.stringify(req.body)}`);
-  res.send(fakeData.routes);
-  return next();
+function get(req, res, next) {
+  console.log(`Request query: ${JSON.stringify(req.query)}`);
+  return res.send(fakeData.routes);
 }
 
 module.exports = {
-  post,
+  get,
 };
