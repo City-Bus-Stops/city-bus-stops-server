@@ -9,26 +9,21 @@ const validator = require('validator');
  */
 function SignUpForm(payload) {
   let isFormValid = true;
-  const errors = {};
-  let title = '';
+  const errors = [];
   if (!payload.email || !validator.isEmail(payload.email)) {
     isFormValid = false;
-    errors.email = 'Please provide a correct email address.';
+    errors.push('Please provide a correct email address.');
   }
   if (!payload.password || !validator.isLength(payload.password, 8)) {
     isFormValid = false;
-    errors.password = 'Password must have at least 8 characters.';
+    errors.push('Password must have at least 8 characters.');
   }
   if (!payload.name || payload.name.trim().length === 0) {
     isFormValid = false;
-    errors.name = 'Please provide your name.';
-  }
-  if (!isFormValid) {
-    title = 'Check the form for errors.';
+    errors.push('Please provide your name.');
   }
   return {
     success: isFormValid,
-    title,
     errors,
   };
 }
@@ -43,22 +38,17 @@ function SignUpForm(payload) {
  */
 function LoginForm(payload) {
   let isFormValid = true;
-  const errors = {};
-  let title = '';
+  const errors = [];
   if (!payload.email || payload.email.trim().length === 0) {
     isFormValid = false;
-    errors.email = 'Please provide your email address.';
+    errors.push('Please provide your email address.');
   }
   if (!payload.password || payload.password.trim().length === 0) {
     isFormValid = false;
-    errors.password = 'Please provide your password.';
-  }
-  if (!isFormValid) {
-    title = 'Check the form for errors.';
+    errors.push('Please provide your password.');
   }
   return {
     success: isFormValid,
-    title,
     errors,
   };
 }

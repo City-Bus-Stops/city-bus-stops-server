@@ -20,14 +20,19 @@ router.post('/signup', (req, res, next) => {
         // the 409 HTTP status code is for conflict error
         return res.status(409).json({
           success: false,
-          title: 'Check the form for errors.',
-          errors: { email: 'This email is already taken.' },
+          errors: [{
+            type: 'Sign Up failed',
+            messages: ['This email is already taken.'],
+          }],
         });
       }
 
       return res.status(400).json({
         success: false,
-        title: 'Could not process the form.',
+        errors: [{
+          type: 'Sign Up failed',
+          messages: ['Could not process the form.'],
+        }],
       });
     }
 
@@ -50,15 +55,24 @@ router.post('/login', (req, res, next) => {
 
   passport.authenticate('local-login', (err, token, userData) => {
     if (err) {
-      if (err.name === 'IncorrectCredentialsError') {
+      if (err.name === 'Incorrect Credentials Error') {
         return res.status(400).json(
-          { success: false, errors: { AutheticationError: err.message } }
+          {
+            success: false,
+            errors: [{
+              type: 'Authentication Error',
+              messages: [err.message],
+            }]
+          }
         );
       }
 
       return res.status(400).json({
         success: false,
-        errors: { AutheticationError: 'Could not process the form.' },
+        errors: [{
+          type: 'Authentication Error',
+          messages: ['Could not process the form.'],
+        }],
       });
     }
     return res.json({

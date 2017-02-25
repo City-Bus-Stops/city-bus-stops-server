@@ -16,7 +16,7 @@ module.exports = (config, jwtSecret) => {
       if (err) { return done(err); }
       if (!user) {
         const error = new Error('Incorrect email or password');
-        error.name = 'IncorrectCredentialsError';
+        error.name = 'Incorrect Credentials Error';
         return done(error);
       }
       // check if a hashed user's password is equal to a value saved in the database
@@ -24,7 +24,7 @@ module.exports = (config, jwtSecret) => {
         if (err) { return done(err); }
         if (!isMatch) {
           const error = new Error('Incorrect email or password');
-          error.name = 'IncorrectCredentialsError';
+          error.name = 'Incorrect Credentials Error';
           return done(error);
         }
         const payload = {

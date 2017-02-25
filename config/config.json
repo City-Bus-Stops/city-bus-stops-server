@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "port": 8000,
-  "db": "mongodb://localhost:27018/getRoute",
+  "db": "mongodb://localhost:27017/getRoute",
   "local-strategy": {
     "usernameField": "email",
     "passwordField": "password",
