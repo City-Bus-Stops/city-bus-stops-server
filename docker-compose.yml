@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+
+  mongodb:
+    container_name: mongo-compose
+    image: mongo:latest
+    ports:
+      - "27017:27017"
