@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('mongoose').model('User');
+const User = require('../services/mongoose').model('User');
 
 module.exports = (jwtSecret) => {
   /**

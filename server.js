@@ -19,10 +19,11 @@ app.use(cors({ credentials: true, origin: true }));
 // Passport strategy
 require('./passport')(nconf.get('local-strategy'), nconf.get('jwt-secret'));
 
-// Check auth before routes
-const authCheckMiddleware = require('./middlewares/auth-check')(nconf.get('jwt-secret'));
-app.use('/api', authCheckMiddleware);
 app.use('/', routes);
+
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find that!");
+});
 
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(err.status || 500);
@@ -37,4 +38,4 @@ app.listen((port), (error) => {
   }
 });
 
-module.export = { app };
+module.export = app;
