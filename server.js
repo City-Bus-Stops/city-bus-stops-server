@@ -4,11 +4,10 @@ const routes = require('./routes');
 const nconf = require('./config');
 const passport = require('passport');
 const cors = require('cors');
+require('./services/mongoose');
 
 const port = nconf.get('port');
 const app = express();
-
-app.use(express.static('../dist'));
 
 app.use(bodyParser.json());
 
@@ -16,9 +15,6 @@ app.use(passport.initialize());
 
 // enable CORS - Cross Origin Resource Sharing(credentials - cookie + auth)
 app.use(cors({ credentials: true, origin: true }));
-
-// Mongoose models
-require('./models')(nconf.get('db'));
 
 // Passport strategy
 require('./passport')(nconf.get('local-strategy'), nconf.get('jwt-secret'));

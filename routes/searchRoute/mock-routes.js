@@ -6,20 +6,9 @@ module.exports = {
       id: faker.random.uuid(),
       arrivalTime: '12 min',
       bustStopName: 'name1',
-      points: [
-        {
-          id: faker.random.uuid(),
-          name: 'name1',
-        },
-        {
-          id: faker.random.uuid(),
-          name: 'name2',
-        },
-        {
-          id: faker.random.uuid(),
-          name: 'name3',
-        },
-      ],
+      busNumber: 15,
+      firstPointName: 'First Point',
+      lastPointName: 'Last Point',
       geoJson: [
         {
           type: 'Feature',
@@ -101,20 +90,9 @@ module.exports = {
       id: faker.random.uuid(),
       arrivalTime: '5 min',
       bustStopName: 'name11',
-      points: [
-        {
-          id: faker.random.uuid(),
-          name: 'name11',
-        },
-        {
-          id: faker.random.uuid(),
-          name: 'name22',
-        },
-        {
-          id: faker.random.uuid(),
-          name: 'name31',
-        },
-      ],
+      busNumber: 3,
+      firstPointName: 'First Point 2',
+      lastPointName: 'Last Point 2',
       geoJson: [
         {
           type: 'Feature',
