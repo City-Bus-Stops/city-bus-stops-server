@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/route', require('./searchRoute'));
+const nconf = require('../config');
+const authCheckMiddleware = require('../middlewares/auth-check');
+
+const api = require('./api');
+
 router.use('/auth', require('./auth'));
-router.use('/api', require('./api'));
-router.use('/location', require('./userLocation/location').get);
-router.use('/address', require('./userLocation/address-router').get);
-router.use('/bus-schedule/:id', require('./busSchedule').get);
+router.use('/api', authCheckMiddleware(nconf.get('jwt-secret')), api);
 
 module.exports = router;
