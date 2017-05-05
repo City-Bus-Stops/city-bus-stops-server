@@ -7,10 +7,10 @@ module.exports = (jwtSecret) => {
    */
   return (req, res, next) => {
     if (!req.headers.authorization) {
-      return res.status(401).end();
+      return res.status(403).end('User not authenticated');
     }
     // get the last part from a authorization header string like "bearer token-value"
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization.split(' ')[0];
     // decode the token using a secret key-phrase
     jwt.verify(token, jwtSecret, (err, decoded) => {
       // the 401 code is for unauthorized status

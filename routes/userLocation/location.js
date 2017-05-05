@@ -22,7 +22,7 @@ exports.get = ((req, res, next) => {
   &format=json`;
   request(queryURL, (err, response, data) => {
     if (err) return next(err);
-    if (response.statusCode !== 200) {
+    if (response.statusCode !== 200 || data.length === 2) {
       const requestError = new Error('Search returns Not Found');
       requestError.status = 404;
       return next(requestError);
@@ -38,6 +38,6 @@ exports.get = ((req, res, next) => {
               };
             })
             .valueOf();
-    return res.send(result);
+    return res.send(result[0]);
   });
 });

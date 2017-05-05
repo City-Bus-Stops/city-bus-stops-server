@@ -6,7 +6,7 @@ exports.get = ((req, res, next) => {
   const lon = parseFloat(req.query.lon);
   if (!Number(lat) || !Number(lon)) {
     const numberError = new Error('Query params is not a Number or query is not found or missing');
-    numberError.statusCode = 401;
+    numberError.statusCode = 400;
     return next(numberError);
   }
   const queryString = `${lat}, ${lon}`;
@@ -28,6 +28,6 @@ exports.get = ((req, res, next) => {
         };
       })
       .valueOf();
-    return res.send(result);
+    return res.send(result[0]);
   });
 });
