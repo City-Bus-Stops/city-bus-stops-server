@@ -13,9 +13,32 @@ through 127.0.0.1:27017 socket and to Neo4j through 127.0.0.1:7474.
 
 ### What we have ?
 #### API
-- `GET /location`  to get geolocation points. Example:
+- `POST /auth/signup` - for users registration. Example:
 ```
-GET /location?name=ул.%20Лиможа&base=Гродно
+{
+	"email": "test-user@test.com",
+	"password": "12345678",
+	"name": "Test User"
+}
+```
+- `POST /auth/login` - to authorize the user. Example request:
+```
+{
+	"email": "test-user@test.com",
+	"password": "12345678",
+}
+```
+`Example Response:`
+```
+{
+  "success": true,
+  "title": "You have successfully signed up! Now you should be able to log in."
+}
+```
+- `GET api/location`  to get geolocation points. Example:
+
+- `GET /location?name=ул.%20Лиможа&base=Гродно`
+```
 [
    {
       name: "улица Лиможа, Девятовка–1, Ленинский район, Гродно, Гродненская область, 230021,
@@ -26,7 +49,7 @@ GET /location?name=ул.%20Лиможа&base=Гродно
 ...
 ]
 ```
-- `GET /address` to get address. Example:
+- `GET api/address` to get address. Example:
 ```
 GET /address?lat=53.70177645&lon=23.8347894179425
 [
@@ -35,3 +58,5 @@ GET /address?lat=53.70177645&lon=23.8347894179425
    }
 ]
 ```
+### Where can i test request/response ?
+* [Here](http://city-bus-stops-server.herokuapp.com/)
