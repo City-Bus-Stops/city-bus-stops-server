@@ -4,7 +4,8 @@
   "description": "Bus router server",
   "scripts": {
     "start": "node server.js",
-    "test": "node ./node_modules/mocha/bin/mocha",
+    "test": "mocha test",
+    "dev-start": "nodemon server.js",
     "fix": "./node_modules/.bin/eslint . --fix"
   },
   "engines": {
