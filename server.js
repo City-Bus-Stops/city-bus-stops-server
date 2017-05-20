@@ -9,6 +9,8 @@ require('./services/mongoose');
 const port = nconf.get('port');
 const app = express();
 
+app.set('port', (process.env.PORT || port));
+
 app.use(bodyParser.json());
 
 app.use(passport.initialize());
@@ -30,7 +32,7 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.send(err.message || 'Internal Server Error');
 });
 
-app.listen((port), (error) => {
+app.listen(app.get('port'), (error) => {
   if (error) {
     console.error(error);
   } else {

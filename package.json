@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "description": "Bus router server",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "node ./node_modules/mocha/bin/mocha",
     "fix": "./node_modules/.bin/eslint . --fix"
+  },
+  "engines": {
+    "node": "6.9.2"
   },
   "repository": {
     "type": "git",
@@ -41,10 +44,8 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
-    "http-status": "^0.2.3",
     "i": "^0.3.5",
     "mocha": "^3.1.2",
-    "npm": "^3.10.9",
     "supertest": "^2.0.1",
     "supertest-as-promised": "^4.0.2"
   }
