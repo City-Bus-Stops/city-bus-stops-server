@@ -13,7 +13,7 @@ through 127.0.0.1:27017 socket and to Neo4j through 127.0.0.1:7474.
 
 ### What we have ?
 #### API
-- `POST /auth/signup` - for users registration. Example:
+- `POST /api/auth/signup` - for users registration. Example:
 ```
 {
 	"email": "test-user@test.com",
@@ -21,7 +21,8 @@ through 127.0.0.1:27017 socket and to Neo4j through 127.0.0.1:7474.
 	"name": "Test User"
 }
 ```
-- `POST /auth/login` - to authorize the user. Example request:
+- `POST /api/auth/login` - to authorize the user.
+`Example request:`
 ```
 {
 	"email": "test-user@test.com",
@@ -32,13 +33,18 @@ through 127.0.0.1:27017 socket and to Neo4j through 127.0.0.1:7474.
 ```
 {
   "success": true,
-  "title": "You have successfully signed up! Now you should be able to log in."
+  "title": "You have successfully logged in!",
+  "userData": {
+    "userName": "Maksim Shuba",
+    "userRole": "USER",
+    "userId": "59219d6b53576c5ffba826cb"
+  }
 }
 ```
 - `GET api/location`  to get geolocation points. Example:
 
-- `GET /location?name=ул.%20Лиможа&base=Гродно`
 ```
+GET /location?name=ул.%20Лиможа&base=Гродно
 [
    {
       name: "улица Лиможа, Девятовка–1, Ленинский район, Гродно, Гродненская область, 230021,
