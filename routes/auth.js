@@ -75,11 +75,11 @@ router.post('/login', (req, res, next) => {
         }],
       });
     }
-    return res.json({
+    res.set('Authorize', token);
+    return res.send({
       success: true,
       title: 'You have successfully logged in!',
-      token,
-      user: userData,
+      userData,
     });
   })(req, res, next);
 });
