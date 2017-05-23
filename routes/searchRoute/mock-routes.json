@@ -1,0 +1,39 @@
+{
+  "routes": [
+    {
+      "id": "1",
+      "from": "Фолюш",
+      "to": "Советская",
+      "busNumber": "28",
+      "timeInTravel": "33"
+    },
+    {
+      "id": "2",
+      "from": "Фолюш",
+      "to": "Советская",
+      "busNumber": "2",
+      "timeInTravel": "25"
+    },
+    {
+      "id": "3",
+      "from": "Фолюш",
+      "to": "Советская",
+      "busNumber": "3",
+      "timeInTravel": "15"
+    },
+    {
+      "id": "4",
+      "from": "Фолюш",
+      "to": "Советская",
+      "busNumber": "4",
+      "timeInTravel": "19"
+    },
+    {
+      "id": "5",
+      "from": "Фолюш",
+      "to": "Советская",
+      "busNumber": "8",
+      "timeInTravel": "13"
+    }
+  ]
+}
