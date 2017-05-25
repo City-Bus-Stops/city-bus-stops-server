@@ -9,20 +9,20 @@ exports.get = ((req, res, next) => {
     paramsError.statusCode = 400;
     return next(paramsError);
   }
-  return fs.readFile(path.resolve(__dirname, 'mock.json'), 'utf-8', (err, data) => {
+  return fs.readFile(path.resolve(__dirname, 'geo.json'), 'utf-8', (err, data) => {
     if (err) {
       const readFileError = new Error(err.message || 'Some error with readFile');
       readFileError.statusCode = err.statusCode || 403;
       return next(readFileError);
     }
-      const parseString = JSON.parse(data).routesInfo;
-      const findRoute = parseString.filter(route => route.id === id);
+    const parseString = JSON.parse(data).routesGeo;
+    const findRoute = parseString.filter(route => route.id === id);
 
-      if (Object.keys(findRoute).length === 0 && typeof findRoute === "object") {
-        const notFoundError = new Error('This route is Not Found');
-        notFoundError.statusCode = 404;
-        return next(notFoundError);
-      }
-      return res.json(findRoute);
+    if (Object.keys(findRoute).length === 0 && typeof findRoute === "object") {
+      const notFoundError = new Error('This route is Not Found');
+      notFoundError.statusCode = 404;
+      return next(notFoundError);
+    }
+    return res.json(findRoute);
   });
 });
