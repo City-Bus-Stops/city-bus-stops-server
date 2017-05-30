@@ -7,10 +7,13 @@ const auth = require('./auth');
 const searchRoute = require('./searchRoute/index');
 const routes = require('./routes');
 const points = require('./points');
+const user = require('./user');
 
 router.use('/auth', auth);
 router.use('/routes', routes);
 router.use('/points', points);
+router.use('/user' , user);
+
 router.get('/location', location.get);
 router.get('/address', address.get);
 
