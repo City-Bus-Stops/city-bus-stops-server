@@ -29,4 +29,4 @@ promise.then(function (data) {
 })
 .catch(function (err) {
   console.log(err)
-})
+});
