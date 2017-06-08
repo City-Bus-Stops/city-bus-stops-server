@@ -18,7 +18,7 @@ function SignUpForm(payload) {
     isFormValid = false;
     errors.push('Password must have at least 8 characters.');
   }
-  if (!payload.name || payload.name.trim().length === 0) {
+  if (!payload.username || payload.username.trim().length === 0) {
     isFormValid = false;
     errors.push('Please provide your name.');
   }

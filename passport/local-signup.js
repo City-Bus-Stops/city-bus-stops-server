@@ -10,7 +10,7 @@ module.exports = (config) => {
     const userData = {
       email: email.trim(),
       password: password.trim(),
-      name: req.body.name.trim(),
+      username: req.body.name.trim(),
       userRole: 'USER',
     };
     const newUser = new User(userData);

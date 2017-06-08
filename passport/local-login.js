@@ -33,7 +33,7 @@ module.exports = (config, jwtSecret) => {
         // create a token string
         const token = jwt.sign(payload, jwtSecret);
         const userData = {
-          userName: user.name,
+          username: user.username,
           userRole: user.userRole,
           userId: user._id,
         };
