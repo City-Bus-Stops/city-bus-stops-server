@@ -1,0 +1,138 @@
+{
+  "pointsInfo": [
+    {
+      "id": 1,
+      "info": {
+        "pointId": "1",
+        "type": "start",
+        "name": "Start Point",
+        "address": "Elnora Center, 25"
+      }
+    },
+    {
+      "id": 2,
+      "info": {
+        "pointId": "2",
+        "isSaved": true,
+        "type": "bus_stop",
+        "name": "Советская",
+        "buses": [
+          {
+            "id": 1,
+            "number": "23",
+            "time": "15",
+            "startPoint": "КСМ",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": 2,
+            "number": "3",
+            "time": "7",
+            "startPoint": "Девятовка",
+            "endPoint": "Фолюш"
+          },
+          {
+            "id": 3,
+            "number": "28",
+            "time": "19",
+            "startPoint": "Девятовка",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": 4,
+            "number": "23",
+            "time": "6",
+            "startPoint": "Колбасино",
+            "endPoint": "Вишневец"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "info": {
+        "pointId": "3",
+        "type": "bus_stop",
+        "name": "Улица Лизы Чайкиной",
+        "buses": [
+          {
+            "id": "1",
+            "number": "23",
+            "time": "26",
+            "startPoint": "КСМ",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": "2",
+            "number": "3",
+            "time": "7",
+            "startPoint": "Девятовка",
+            "endPoint": "Фолюш"
+          },
+          {
+            "id": "3",
+            "number": "28",
+            "time": "19",
+            "startPoint": "Девятовка",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": "4",
+            "number": "23",
+            "time": "6",
+            "startPoint": "Колбасино",
+            "endPoint": "Вишневец"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "info": {
+        "pointId": "4",
+        "isSaved": true,
+        "type": "bus_stop",
+        "name": "Фолюш",
+        "buses": [
+          {
+            "id": "1",
+            "number": "23",
+            "time": "15",
+            "startPoint": "КСМ",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": "2",
+            "number": "3",
+            "time": "7",
+            "startPoint": "Девятовка",
+            "endPoint": "Фолюш"
+          },
+          {
+            "id": "3",
+            "number": "28",
+            "time": "19",
+            "startPoint": "Девятовка",
+            "endPoint": "Химволокно"
+          },
+          {
+            "id": "4",
+            "number": "23",
+            "time": "6",
+            "startPoint": "Колбасино",
+            "endPoint": "Вишневец"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "info": {
+        "pointId": "5",
+        "type": "end",
+        "name": "End Point",
+        "address": "Elnora Center, 25"
+      }
+    }
+  ]
+}

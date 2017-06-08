@@ -1,0 +1,38 @@
+{
+  "busStopsGeo": [
+    {
+      "id": 1,
+      "geoData": {
+        "type": "Feature",
+        "properties": {
+          "id": 1,
+          "type": "bus_stop"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.78851175,
+            53.66706981
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "geoData": {
+        "type": "Feature",
+        "properties": {
+          "id": 2,
+          "type": "bus_stop"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.78439188,
+            53.66429825
+          ]
+        }
+      }
+    }
+  ]
+}
