@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, index: { unique: true } },
   password: String,
   username: String,
-  userRole: { type: String },
+  userRole: String,
 });
 
 UserSchema.methods.comparePassword = function (password, callback) {
