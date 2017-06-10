@@ -36,7 +36,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "request": "^2.78.0",
-    "validator": "^6.1.0"
+    "validate.js": "^0.11.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

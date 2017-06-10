@@ -5,14 +5,13 @@ const bcrypt = require('bcryptjs');
 const UserSchema = new mongoose.Schema({
   email: { type: String, index: { unique: true } },
   password: String,
-  name: String,
-  userRole: { type: String, index: { unique: true } },
+  username: String,
+  userRole: String,
 });
 
 UserSchema.methods.comparePassword = function (password, callback) {
   bcrypt.compare(password, this.password, callback);
 };
-
 
 /**
  * The pre-save hook method.

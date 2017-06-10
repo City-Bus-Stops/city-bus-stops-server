@@ -1,4 +1,4 @@
-const validator = require('validator');
+const validate = require('validate.js');
 /**
  * Validate the sign up form
  *
@@ -8,24 +8,26 @@ const validator = require('validator');
  * errors tips, and a global message for a whole form.
  */
 function SignUpForm(payload) {
-  let isFormValid = true;
-  const errors = [];
-  if (!payload.email || !validator.isEmail(payload.email)) {
-    isFormValid = false;
-    errors.push('Please provide a correct email address.');
-  }
-  if (!payload.password || !validator.isLength(payload.password, 8)) {
-    isFormValid = false;
-    errors.push('Password must have at least 8 characters.');
-  }
-  if (!payload.name || payload.name.trim().length === 0) {
-    isFormValid = false;
-    errors.push('Please provide your name.');
-  }
-  return {
-    success: isFormValid,
-    errors,
-  };
+  return validate(payload, {
+    email: {
+      presence: true,
+      email: true,
+    },
+    password: {
+      presence: true,
+      length: {
+        minimum: 8,
+        message: 'must be at least 8 characters',
+      }
+    },
+    username: {
+      presence: true,
+      length: {
+        minimum: 5,
+        message: 'must be at least 5 characters',
+      }
+    }
+  });
 }
 
 /**
@@ -37,23 +39,53 @@ function SignUpForm(payload) {
  * errors tips, and a global message for the whole form.
  */
 function LoginForm(payload) {
-  let isFormValid = true;
-  const errors = [];
-  if (!payload.email || payload.email.trim().length === 0) {
-    isFormValid = false;
-    errors.push('Please provide your email address.');
-  }
-  if (!payload.password || payload.password.trim().length === 0) {
-    isFormValid = false;
-    errors.push('Please provide your password.');
-  }
-  return {
-    success: isFormValid,
-    errors,
-  };
+  return validate(payload, {
+    email: {
+      presence: true,
+      email: true,
+    },
+    password: {
+      presence: true,
+      length: {
+        minimum: 8,
+        message: 'must be at least 8 characters',
+      }
+    },
+  });
+}
+
+function registrationForm(payload) {
+  return validate(payload, {
+    email: {
+      presence: true,
+      email: true,
+    },
+    password: {
+      presence: true,
+      length: {
+        minimum: 8,
+        message: 'must be at least 8 characters',
+      }
+    },
+    username: {
+      presence: true,
+      length: {
+        minimum: 5,
+        message: 'must be at least 5 characters',
+      }
+    },
+    userRole: {
+      presence: true,
+      length: {
+        minimum: 4,
+        message: 'must be at least 4 characters',
+      }
+    }
+  });
 }
 
 module.exports = {
   SignUpForm,
   LoginForm,
+  registrationForm,
 };
