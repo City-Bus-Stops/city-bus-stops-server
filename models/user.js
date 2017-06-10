@@ -13,7 +13,6 @@ UserSchema.methods.comparePassword = function (password, callback) {
   bcrypt.compare(password, this.password, callback);
 };
 
-
 /**
  * The pre-save hook method.
  */

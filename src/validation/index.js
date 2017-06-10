@@ -54,7 +54,38 @@ function LoginForm(payload) {
   });
 }
 
+function registrationForm(payload) {
+  return validate(payload, {
+    email: {
+      presence: true,
+      email: true,
+    },
+    password: {
+      presence: true,
+      length: {
+        minimum: 8,
+        message: 'must be at least 8 characters',
+      }
+    },
+    username: {
+      presence: true,
+      length: {
+        minimum: 5,
+        message: 'must be at least 5 characters',
+      }
+    },
+    userRole: {
+      presence: true,
+      length: {
+        minimum: 4,
+        message: 'must be at least 4 characters',
+      }
+    }
+  });
+}
+
 module.exports = {
   SignUpForm,
   LoginForm,
+  registrationForm,
 };

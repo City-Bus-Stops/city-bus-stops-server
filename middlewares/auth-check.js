@@ -21,6 +21,7 @@ module.exports = (jwtSecret) => {
         if (err || !user) {
           return res.status(401).end();
         }
+        req.isAdmin = user && user.userRole === 'ADMIN';
         return next();
       });
     });
