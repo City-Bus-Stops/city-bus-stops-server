@@ -6,6 +6,6 @@ const users = require('./users');
 
 router.get('/users', users.get);
 router.post('/users', users.post);
-// router.delete('/users/:id', users.delete);
+router.delete('/users/:id', users.delete);
 
 module.exports = router;

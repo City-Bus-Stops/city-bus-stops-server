@@ -50,6 +50,25 @@ exports.post = ((req, res, next) => {
         },
       });
     }
-    return res.status(204);
+    return res.status(204).end();
   });
+});
+
+exports.delete = ((req, res, next) => {
+  if (!req.isAdmin) {
+    return res.status(403).end('This user is not an administrator')
+  }
+  const id = req.params.id;
+  if (!id) {
+    return res.status(400).end('Bad request');
+  }
+  User.findByIdAndRemove({'_id': id}, (err, user) => {
+    if (err) {
+      return res.status(409).end(err.message || 'Some error with db');
+    }
+    if (!user) {
+      return res.status(404).end();
+    }
+  });
+  return res.status(204).end();
 });
