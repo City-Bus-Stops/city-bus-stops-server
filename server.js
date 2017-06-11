@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(err.statusCode || 500);
-  res.send(err.message || 'Internal Server Error');
+  res.json({ errorMessage: [err.message || 'Internal Server Error'] });
 });
 
 app.listen(app.get('port'), (error) => {
