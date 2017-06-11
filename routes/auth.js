@@ -6,6 +6,7 @@ const validate = require('../src/validation');
 router.post('/signup', (req, res, next) => {
   const validationResult = validate.SignUpForm(req.body);
   if (validationResult) {
+    res.set('Content-Type', 'application/json');
     return res.status(400).json(validationResult);
   }
 
@@ -15,20 +16,16 @@ router.post('/signup', (req, res, next) => {
         // the 11000 Mongo code is for duplicate email error
         // the 409 HTTP status code is for conflict error
         return res.status(409).json({
-          error: {
-            message: 'This email is already taken',
-          }
+          errorMessage: ['This email is already taken'],
         });
       }
 
       return res.status(400).json({
-        error: {
-          message: 'Could not process the form.',
-        },
+        errorMessage: ['Could not process the form'],
       });
     }
 
-    return res.status(204).send();
+    return res.status(204).end();
   })(req, res, next);
 });
 
@@ -43,17 +40,13 @@ router.post('/login', (req, res, next) => {
       if (err.name === 'Incorrect Credentials Error') {
         return res.status(400).json(
           {
-            error: {
-              message: err.message,
-            },
+            errorMessage: [err.message],
           }
         );
       }
 
       return res.status(400).json({
-        error: {
-          message: 'Could not process the form.',
-        },
+        errorMessage: ['Could not process the form'],
       });
     }
     res.set('Authorize', token);

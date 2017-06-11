@@ -5,7 +5,9 @@ const validate = require('../../src/validation');
 
 exports.get = ((req, res, next) => {
   if (!req.isAdmin) {
-    return res.status(403).end('This user is not an administrator')
+    const error = new Error('This user is not an administrator')
+    error.statusCode = 403;
+    return next(error);
   }
   User.find({}, (err, users) => {
     res.json(users);
@@ -14,11 +16,15 @@ exports.get = ((req, res, next) => {
 
 exports.post = ((req, res, next) => {
   if (!req.isAdmin) {
-    return res.status(403).end('This user is not an administrator')
+    const error = new Error('This user is not an administrator')
+    error.statusCode = 403;
+    return next(error);
   }
   const validationResult = validate.registrationForm(req.body);
   if (validationResult) {
-    return res.status(400).json(validationResult);
+    const error = new Error(validationResult);
+    error.statusCode = 400;
+    return next(error);
   }
   const { userRole, email, password, username } = req.body;
   if (userRole !== 'USER' && userRole !== 'ADMIN') {
