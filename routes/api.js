@@ -24,6 +24,6 @@ router.use('/administration', authMiddleware(nconf.get('jwt-secret')), administr
 router.get('/location', location.get);
 router.get('/address', address.get);
 
-router.post('/search-route', searchRoute.post);
+router.get('/search-route', searchRoute.get);
 
 module.exports = router;

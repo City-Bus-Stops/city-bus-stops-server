@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-exports.post = ((req, res, next) => {
+exports.get = ((req, res, next) => {
   const from = req.body.from;
   const to = req.body.to;
   if (!from || !to) {
@@ -13,4 +13,3 @@ exports.post = ((req, res, next) => {
 
   fs.createReadStream(path.resolve(__dirname, 'mock-routes.json')).pipe(res);
 });
-
