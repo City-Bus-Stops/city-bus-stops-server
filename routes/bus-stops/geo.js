@@ -16,13 +16,13 @@ exports.get = ((req, res, next) => {
       return next(readFileError);
     }
     const parseString = JSON.parse(data).busStopsGeo;
-    const findRoute = parseString.filter(route => route.id === id);
+    const findGeo = parseString.filter(route => route.id === id);
 
-    if (Object.keys(findRoute).length === 0 && typeof findRoute === "object") {
+    if (Object.keys(findGeo).length === 0 && typeof findGeo === "object") {
       const notFoundError = new Error('This route is Not Found');
       notFoundError.statusCode = 404;
       return next(notFoundError);
     }
-    return res.json(findRoute);
+    return res.json(findGeo[0].geoData);
   });
 });

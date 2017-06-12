@@ -3,8 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 exports.get = ((req, res, next) => {
-  const from = req.body.from;
-  const to = req.body.to;
+  const { from, to } = req.query;
   if (!from || !to) {
     const bodyError = new Error('Bad request');
     bodyError.statusCode = 400;
