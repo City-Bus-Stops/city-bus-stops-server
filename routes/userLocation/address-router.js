@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const request = require('request');
 
 exports.get = ((req, res, next) => {
@@ -14,20 +13,16 @@ exports.get = ((req, res, next) => {
   &format=json`;
   return request(queryURL, (err, response, data) => {
     if (err) return next(err);
-    if (response.statusCode !== 200 || data.length === 2) {
+    const parsedJSONData = JSON.parse(data);
+    if (response.statusCode !== 200 || parsedJSONData.length === 2) {
       const requestError = new Error('Search returns Not Found');
       requestError.status = 404;
       return next(requestError);
     }
-    const parseJSONData = JSON.parse(data);
-    const result = _
-      .chain(parseJSONData)
-      .map((o) => { // eslint-disable-line arrow-body-style
-        return {
-          address: o.display_name.match(/.*(Гродно|Hrodno)/g, "") || o.display_name,
-        };
-      })
-      .valueOf();
-    return res.send(result[0]);
+    const result = parsedJSONData
+      .map(location => location.display_name.match(/.*(Гродно|Hrodno)/g, "")[0] || location.display_name)
+    return res.send({
+      address: result[0],
+    });
   });
 });

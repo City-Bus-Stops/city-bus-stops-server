@@ -30,13 +30,11 @@ exports.get = ((req, res, next) => {
     const parseJSONData = JSON.parse(data);
     const result = _
             .chain(parseJSONData)
-            .map((o) => { // eslint-disable-line arrow-body-style
-              return {
+            .map((o) => ({
                 name: o.display_name,
                 lat: o.lat,
                 lon: o.lon,
-              };
-            })
+              }))
             .valueOf();
     return res.send(result[0]);
   });
