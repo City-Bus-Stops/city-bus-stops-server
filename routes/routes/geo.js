@@ -4,7 +4,8 @@ const path = require('path');
 
 exports.get = ((req, res, next) => {
   const id = Number(req.params.id);
-  if (!id || (id && !Number(id))) {
+  console.log('Route id: ', id)
+  if (!id || !Number(id)) {
     const paramsError = new Error('Bad request');
     paramsError.statusCode = 400;
     return next(paramsError);
@@ -15,14 +16,13 @@ exports.get = ((req, res, next) => {
       readFileError.statusCode = err.statusCode || 403;
       return next(readFileError);
     }
-    const parseString = JSON.parse(data).routesGeo;
-    const findRoute = parseString.filter(route => route.id === id);
+    const routeGeo = JSON.parse(data).routeGeo;
 
-    if (Object.keys(findRoute).length === 0 && typeof findRoute === "object") {
+    if (routeGeo === undefined) {
       const notFoundError = new Error('This route is Not Found');
       notFoundError.statusCode = 404;
       return next(notFoundError);
     }
-    return res.json(findRoute);
+    return res.json(routeGeo);
   });
 });

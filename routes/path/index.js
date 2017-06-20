@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const id = require('./findByPointId');
+const path = require('./path');
 
-router.get('/:id/info', id.get);
+router.use('/', path.get);
 
 module.exports = router;

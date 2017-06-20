@@ -1,110 +1,105 @@
 {
-  "routesGeo": [
-    {
-      "id": 1,
-      "geoData": [
+    "routeGeo": [
         {
-          "type": "Feature",
-          "properties": {
-            "id": 1,
-            "type": "start"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              23.79417658,
-              53.6729683
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "id": "1",
+                "type": "start"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.79417658,
+                    53.6729683
+                ]
+            }
         },
         {
-          "type": "Feature",
-          "properties": {
-            "id": 2,
-            "type": "bus_stop"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              23.78851175,
-              53.66706981
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "id": "2277560662",
+                "type": "bus_stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.7914571,
+                    53.6700958
+                ]
+            }
         },
         {
-          "type": "Feature",
-          "properties": {
-            "id": 3,
-            "type": "bus_stop"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              23.78439188,
-              53.66429825
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "id": 2296311715,
+                "type": "bus_stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.7874498,
+                    53.6663653
+                ]
+            }
         },
         {
-          "type": "Feature",
-          "properties": {
-            "id": 4,
-            "type": "bus_stop"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              23.78190279,
-              53.65911062
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "id": "2296311715",
+                "type": "bus_stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.7841221,
+                    53.6635265
+                ]
+            }
         },
         {
-          "type": "Feature",
-          "properties": {
-            "id": 5,
-            "type": "end"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              23.78194571,
-              53.65791534
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "id": "5",
+                "type": "end"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.78194571,
+                    53.65791534
+                ]
+            }
         },
         {
-          "type": "Feature",
-          "properties": {
-            "name": "Lines"
-          },
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [
-                23.79417658,
-                53.6729683
-              ],
-              [
-                23.78851175,
-                53.66706981
-              ],
-              [
-                23.78439188,
-                53.66429825
-              ],
-              [
-                23.78190279,
-                53.65911062
-              ],
-              [
-                23.78194571,
-                53.65791534
-              ]
-            ]
-          }
+            "type": "Feature",
+            "properties": {
+                "name": "Lines"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.79417658,
+                        53.6729683
+                    ],
+                    [
+                        23.78851175,
+                        53.66706981
+                    ],
+                    [
+                        23.78439188,
+                        53.66429825
+                    ],
+                    [
+                        23.78190279,
+                        53.65911062
+                    ],
+                    [
+                        23.78194571,
+                        53.65791534
+                    ]
+                ]
+            }
         }
-      ]
-    }
-  ]
+    ]
 }

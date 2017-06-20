@@ -3,19 +3,21 @@
     {
       "id": 1,
       "info": {
-        "pointId": "1",
-        "type": "start",
-        "name": "Start Point",
-        "address": "Elnora Center, 25"
+        "id": "1",
+        "name": "Map Point",
+        "address": "Elnora Center, 25",
+        "coords": [53.6729683, 23.79417658]
       }
     },
     {
       "id": 2,
       "info": {
-        "pointId": "2",
+        "id": "2277560662",
         "isSaved": true,
         "type": "bus_stop",
         "name": "Советская",
+        "address": "Elnora Center, 25",
+        "coords": [53.66706981, 23.78851175],
         "buses": [
           {
             "id": 1,
@@ -51,9 +53,11 @@
     {
       "id": 3,
       "info": {
-        "pointId": "3",
+        "id": "2296311715",
         "type": "bus_stop",
         "name": "Улица Лизы Чайкиной",
+        "address": "Elnora Center, 25",
+        "coords": [53.66429825, 23.78439188],
         "buses": [
           {
             "id": "1",
@@ -89,10 +93,12 @@
     {
       "id": 4,
       "info": {
-        "pointId": "4",
+        "id": "2364941426",
         "isSaved": true,
         "type": "bus_stop",
         "name": "Фолюш",
+        "address": "Elnora Center, 25",
+        "coords": [53.65911062, 23.78190279],
         "buses": [
           {
             "id": "1",
@@ -128,10 +134,10 @@
     {
       "id": 5,
       "info": {
-        "pointId": "5",
-        "type": "end",
-        "name": "End Point",
-        "address": "Elnora Center, 25"
+        "id": "5",
+        "name": "Map Point",
+        "address": "Elnora Center, 25",
+        "coords": [53.65791534, 23.78194571]
       }
     }
   ]
